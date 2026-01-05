@@ -23,10 +23,15 @@ body{
   line-height:1.6;
 }
 
-/* blueprint grid overlay */
-body::before{
+/* hero background only */
+.heroWrap{
+  position: relative;
+  isolation: isolate;
+}
+
+.heroWrap::before{
   content:"";
-  position:fixed;
+  position:absolute;
   inset:0;
   pointer-events:none;
   background:
@@ -35,6 +40,7 @@ body::before{
     linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px) 0 0 / 16px 16px,
     linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px) 0 0 / 16px 16px;
   opacity:.6;
+  z-index:-1;
 }
 
 /* top nav */
@@ -143,11 +149,13 @@ body::before{
 }
 
 .aboutCard{
-  background: rgba(2,6,23,.45);
-  border: 1px solid rgba(148,163,184,.18);
+  background: #ffffff;              /* 완전 흰 카드 */
+  border: 1px solid #e5e7eb;        /* 연한 테두리 */
   border-radius: 18px;
-  padding: 22px 22px 18px;
-  backdrop-filter: blur(10px);
+  padding: 26px 26px 22px;
+
+  /* ↓ 이 줄은 제거 */
+  /* backdrop-filter: blur(10px); */
 }
 
 .aboutLead{
@@ -220,3 +228,14 @@ body::before{
   animation: bob 1.6s ease-in-out infinite;
 }
 .downLink:hover{ color: var(--accent); }
+
+.section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+#about{
+  background: #f8fafc;
+  color: #0f172a;
+}
