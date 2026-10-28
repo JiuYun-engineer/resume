@@ -6,8 +6,10 @@
   <title>Robotics | Jiu (Luke) Yun</title>
   <link rel="stylesheet" href="styles/main.css" />
   <script>
-    try{ if(!sessionStorage.getItem('bpIntro')){ document.documentElement.classList.add('bp-intro'); sessionStorage.setItem('bpIntro','1'); } }catch(e){ document.documentElement.classList.add('bp-intro'); }
+    try{ if(!sessionStorage.getItem('bpIntro')){ document.documentElement.classList.add('bp-intro'); sessionStorage.setItem('bpIntro','1'); } }catch(e){}
+    setTimeout(function(){ document.documentElement.classList.add('bp-done'); }, 4500);
   </script>
+  <script src="scripts/blueprint.js" defer></script>
 </head>
 <body>
 
