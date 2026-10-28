@@ -301,3 +301,19 @@ body{
 .paperBlank dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
 .paperBlank dt{color:var(--muted)}
 .paperBlank dd{margin:0;color:rgba(148,163,184,.55)}
+
+/* ===== About: full-width white band, readable contact text ===== */
+#about{
+  max-width:none;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:96px max(24px, calc((100% - 1052px) / 2));
+}
+#about .contactLabel{ color:#475569; }
+#about .contactValue a{
+  color:#0f172a;
+  border-bottom-color:rgba(15,23,42,.35);
+}
+#about .contactValue a:hover{ color:#0369a1; border-bottom-color:#0369a1; }
