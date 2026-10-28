@@ -302,18 +302,63 @@ body{
 .paperBlank dt{color:var(--muted)}
 .paperBlank dd{margin:0;color:rgba(148,163,184,.55)}
 
-/* ===== About: full-width white band, readable contact text ===== */
+/* ===== Site-wide blueprint grid (fixed, continuous behind every section) ===== */
+.heroWrap::before, .pageHead::before{ display:none; }
+body::before, body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+}
+/* fine 16px grid */
+body::before{
+  background:
+    linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px) 0 0 / 16px 16px;
+}
+/* major 64px grid */
+body::after{
+  background:
+    linear-gradient(rgba(148,163,184,.16) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, rgba(148,163,184,.16) 1px, transparent 1px) 0 0 / 64px 64px;
+}
+
+/* intro: the grid unrolls from the center on first visit */
+.bp-intro body::after{ animation: bpSpread 2s cubic-bezier(.3,.1,.3,1) both; }
+.bp-intro body::before{ animation: bpSpread 2.2s cubic-bezier(.3,.1,.3,1) .35s both; }
+.bp-intro .hero, .bp-intro .pageHeadInner{ animation: bpFade .8s ease-out 1.3s both; }
+@keyframes bpSpread{
+  from{ clip-path: circle(0% at 50% 45%); opacity:.2; }
+  to{ clip-path: circle(75% at 50% 45%); opacity:1; }
+}
+@keyframes bpFade{
+  from{ opacity:0; transform: translateY(-6px); }
+  to{ opacity:1; transform: translateY(-18px); }
+}
+.bp-intro .pageHeadInner{ animation-name: bpFadeFlat; }
+@keyframes bpFadeFlat{ from{ opacity:0; } to{ opacity:1; } }
+@media (prefers-reduced-motion: reduce){
+  .bp-intro body::before, .bp-intro body::after, .bp-intro .hero, .bp-intro .pageHeadInner{ animation:none; }
+}
+
+/* ===== About: floating rounded panel ===== */
 #about{
-  max-width:none;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:96px max(24px, calc((100% - 1052px) / 2));
+  max-width:1100px;
+  margin:0 auto 96px;
+  padding:72px 48px;
+  border-radius:28px;
+  background:#f8fafc;
+  color:#0f172a;
+  border:1px solid rgba(148,163,184,.25);
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+@media (max-width: 1148px){
+  #about{ margin:0 24px 96px; }
+}
+@media (max-width: 640px){
+  #about{ margin:0 16px 64px; padding:40px 20px; border-radius:20px; }
 }
 #about .contactLabel{ color:#475569; }
-#about .contactValue a{
-  color:#0f172a;
-  border-bottom-color:rgba(15,23,42,.35);
-}
+#about .contactValue a{ color:#0f172a; border-bottom-color:rgba(15,23,42,.35); }
 #about .contactValue a:hover{ color:#0369a1; border-bottom-color:#0369a1; }
