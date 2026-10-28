@@ -7,7 +7,9 @@
 
   var STEP = 64;                       // must match the major grid size in main.css
   var LINE = 'rgba(148,163,184,.16)';  // same as the CSS major grid
-  var TIP  = 'rgba(56,189,248,.85)';   // accent at the growing ends
+  var DOT  = 'rgba(255,255,255,.9)';   // seed point: white, line-width diameter
+  var GROW = 0.45;                     // seconds for a seed point to grow before lines start
+  var LW   = 1;                        // grid line thickness (px)
   var canvas = document.createElement('canvas');
   canvas.className = 'bpCanvas';
   document.body.appendChild(canvas);
@@ -34,8 +36,8 @@
     return { seed: best, delay: bd / speed };
   }
   var lines = [];
-  for (var r = 0; r < rows; r++) { var y = r * STEP, n = nearest(y, 'y'); lines.push({ h: true, at: y, from: n.seed.x, t0: n.delay }); }
-  for (var c = 0; c < cols; c++) { var x = c * STEP, m = nearest(x, 'x'); lines.push({ h: false, at: x, from: m.seed.y, t0: m.delay }); }
+  for (var r = 0; r < rows; r++) { var y = r * STEP, n = nearest(y, 'y'); lines.push({ h: true, at: y, from: n.seed.x, t0: n.delay + GROW }); }
+  for (var c = 0; c < cols; c++) { var x = c * STEP, m = nearest(x, 'x'); lines.push({ h: false, at: x, from: m.seed.y, t0: m.delay + GROW }); }
 
   var start = null, finished = false;
 
@@ -52,24 +54,22 @@
       var a = Math.max(0, L.from - len), b = Math.min(limit, L.from + len);
       if (a > 0 || b < limit) allDone = false;
       ctx.fillStyle = LINE;
-      if (L.h) ctx.fillRect(a, L.at, b - a, 1); else ctx.fillRect(L.at, a, 1, b - a);
-      // bright tips while growing
-      ctx.fillStyle = TIP;
-      var tip = 10;
-      if (a > 0) { if (L.h) ctx.fillRect(a, L.at, tip, 1); else ctx.fillRect(L.at, a, 1, tip); }
-      if (b < limit) { if (L.h) ctx.fillRect(b - tip, L.at, tip, 1); else ctx.fillRect(L.at, b - tip, 1, tip); }
+      if (L.h) ctx.fillRect(a, L.at, b - a, LW); else ctx.fillRect(L.at, a, LW, b - a);
     });
 
-    // seed points pulse while the grid is forming
-    var glow = Math.max(0, 1 - t / 2.2);
+    // seed points: start as nothing, grow to the line thickness, then fade once the grid is done
+    var glow = Math.max(0, 1 - Math.max(0, t - 2.4) / 0.5);
     if (glow > 0) {
+      ctx.fillStyle = DOT;
+      ctx.globalAlpha = glow;
       seeds.forEach(function (s) {
-        if (t < s.d) return;
+        var k = Math.min(1, Math.max(0, (t - s.d) / GROW));
+        if (k <= 0) return;
         ctx.beginPath();
-        ctx.arc(s.x + 0.5, s.y + 0.5, 2.5 + (1 - glow) * 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(56,189,248,' + (0.9 * glow).toFixed(3) + ')';
+        ctx.arc(s.x + LW / 2, s.y + LW / 2, (LW / 2) * k, 0, Math.PI * 2);
         ctx.fill();
       });
+      ctx.globalAlpha = 1;
     }
 
     if (allDone && glow === 0 && !finished) {
