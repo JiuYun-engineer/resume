@@ -8,14 +8,12 @@
   </defs>
   <g clip-path="url(#r)">
     <rect width="64" height="64" fill="url(#bg)"/>
-    <!-- blueprint grid -->
     <g stroke="#94a3b8" stroke-opacity=".18" stroke-width="1">
       <path d="M0 16.5H64M0 32.5H64M0 48.5H64M16.5 0V64M32.5 0V64M48.5 0V64"/>
     </g>
   </g>
-  <!-- JY monogram, drawn on the grid -->
-  <g fill="none" stroke="#e5e7eb" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M26 15V37a8.5 8.5 0 0 1-17 0"/>
-    <path d="M34.5 15L44 30.5L53.5 15M44 30.5V49"/>
+  <!-- JY in Tinos Bold (Times New Roman style), converted to outlines -->
+  <g fill="#f1f5f9" transform="translate(9.35 44.00) scale(0.01817 -0.01817)">
+    <path d="M501 1242 329 1268V1341H968V1268L816 1242V432Q816 215 696.0 97.5Q576 -20 354 -20Q279 -20 206.5 -11.5Q134 -3 91 10V314H180L210 135Q229 112 264.0 99.0Q299 86 341 86Q410 86 455.5 134.0Q501 182 501 276Z M1873.56 528V100L2086.56 73V0H1344.56V73L1557.56 100V522L1149.56 1242L998.56 1268V1341H1688.56V1268L1508.56 1242L1814.56 680L2110.56 1242L1946.56 1268V1341H2402.56V1268L2260.56 1242Z"/>
   </g>
 </svg>
