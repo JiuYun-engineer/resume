@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2" />
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#0b1220" />
-  <link rel="stylesheet" href="styles/main.css?v=9" />
+  <link rel="stylesheet" href="styles/main.css?v=10" />
   <script>
     try{ if(!sessionStorage.getItem('bpIntro')){ document.documentElement.classList.add('bp-intro'); sessionStorage.setItem('bpIntro','1'); } }catch(e){}
     setTimeout(function(){ document.documentElement.classList.add('bp-done'); }, 4500);
@@ -43,29 +43,44 @@
 <main class="clubSection">
   <ul class="clubGrid">
     <li class="club">
-      <p class="clubField">Aerospace engineering</p>
-      <h3>Space Dreamers</h3>
-      <p class="clubRole">Captain</p>
+      <img class="clubLogo" src="assets/clubs/space-dreamers.png" alt="Space Dreamers logo" loading="lazy">
+      <div class="clubText">
+        <p class="clubField">Aerospace engineering</p>
+        <h3>Space Dreamers</h3>
+        <p class="clubRole">Captain</p>
+      </div>
     </li>
     <li class="club">
-      <p class="clubField">Computer science</p>
-      <h3>Binary</h3>
-      <p class="clubRole">Founder</p>
+      <img class="clubLogo" src="assets/clubs/binary.png" alt="Binary logo" loading="lazy">
+      <div class="clubText">
+        <p class="clubField">Computer science</p>
+        <h3>Binary</h3>
+        <p class="clubRole">Founder</p>
+      </div>
     </li>
     <li class="club">
-      <p class="clubField">Astronomy</p>
-      <h3>Skywatchers</h3>
-      <p class="clubRole">Vice captain</p>
+      <img class="clubLogo" src="assets/clubs/skywatchers.png" alt="Skywatchers logo" loading="lazy">
+      <div class="clubText">
+        <p class="clubField">Astronomy</p>
+        <h3>Skywatchers</h3>
+        <p class="clubRole">Vice captain</p>
+      </div>
     </li>
     <li class="club">
-      <p class="clubField">Aerospace</p>
-      <h3>Watson</h3>
-      <p class="clubRole">Member</p>
+      <img class="clubLogo" src="assets/clubs/watson.png" alt="WATSON logo" loading="lazy">
+      <div class="clubText">
+        <p class="clubField">Aerospace</p>
+        <h3>WATSON</h3>
+        <p class="clubRole">Member</p>
+      </div>
     </li>
     <li class="club">
-      <p class="clubField">Biomedical science</p>
-      <h3>Biom</h3>
-      <p class="clubRole">Member</p>
+      <div class="clubLogo empty" aria-hidden="true"></div>
+      <div class="clubText">
+        <p class="clubField">Biomedical science</p>
+        <h3>Biom</h3>
+        <p class="clubRole">Member</p>
+      </div>
     </li>
   </ul>
 </main>
