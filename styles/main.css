@@ -385,3 +385,6 @@ a.projectMedia{display:block;width:100%;align-self:start}
 .clubLogo{width:84px;height:84px;flex:0 0 84px;border-radius:14px;object-fit:cover;background:#fff}
 .clubLogo.empty{background:transparent;border:1px dashed rgba(148,163,184,.35)}
 .clubText{min-width:0}
+.projectMedia.logoMedia{border-style:solid;border-color:rgba(148,163,184,.2)}
+.projectMedia.logoMedia > img{position:static;width:auto;height:78%;max-width:78%;object-fit:contain;margin:auto}
+.project a{color:var(--accent)}

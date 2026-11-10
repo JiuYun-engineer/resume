@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2" />
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#0b1220" />
-  <link rel="stylesheet" href="styles/main.css?v=10" />
+  <link rel="stylesheet" href="styles/main.css?v=11" />
   <script>
     try{ if(!sessionStorage.getItem('bpIntro')){ document.documentElement.classList.add('bp-intro'); sessionStorage.setItem('bpIntro','1'); } }catch(e){}
     setTimeout(function(){ document.documentElement.classList.add('bp-done'); }, 4500);
@@ -40,49 +40,56 @@
   </div>
 </section>
 
-<main class="clubSection">
-  <ul class="clubGrid">
-    <li class="club">
-      <img class="clubLogo" src="assets/clubs/space-dreamers.png" alt="Space Dreamers logo" loading="lazy">
-      <div class="clubText">
-        <p class="clubField">Aerospace engineering</p>
-        <h3>Space Dreamers</h3>
-        <p class="clubRole">Captain</p>
-      </div>
-    </li>
-    <li class="club">
-      <img class="clubLogo" src="assets/clubs/binary.png" alt="Binary logo" loading="lazy">
-      <div class="clubText">
-        <p class="clubField">Computer science</p>
-        <h3>Binary</h3>
-        <p class="clubRole">Founder</p>
-      </div>
-    </li>
-    <li class="club">
-      <img class="clubLogo" src="assets/clubs/skywatchers.png" alt="Skywatchers logo" loading="lazy">
-      <div class="clubText">
-        <p class="clubField">Astronomy</p>
-        <h3>Skywatchers</h3>
-        <p class="clubRole">Vice captain</p>
-      </div>
-    </li>
-    <li class="club">
-      <img class="clubLogo" src="assets/clubs/watson.png" alt="WATSON logo" loading="lazy">
-      <div class="clubText">
-        <p class="clubField">Aerospace</p>
-        <h3>WATSON</h3>
-        <p class="clubRole">Member</p>
-      </div>
-    </li>
-    <li class="club">
-      <div class="clubLogo empty" aria-hidden="true"></div>
-      <div class="clubText">
-        <p class="clubField">Biomedical science</p>
-        <h3>Biom</h3>
-        <p class="clubRole">Member</p>
-      </div>
-    </li>
-  </ul>
+<main class="projectList">
+  <article class="project">
+    <div class="projectMedia logoMedia" style="background:#ffffff"><img src="assets/clubs/space-dreamers.png" alt="Space Dreamers logo" loading="lazy"></div>
+    <div>
+      <p class="projectMeta">Captain, aerospace engineering</p>
+      <h2>Space Dreamers</h2>
+      <p>Captain of the school's aerospace engineering club, active since 2015. Leads club projects and the club's aerospace education outreach.</p>
+      <ul class="tags"><li>Captain</li><li>Aerospace engineering</li><li>Outreach</li></ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="projectMedia logoMedia" style="background:#000000"><img src="assets/clubs/binary.png" alt="Binary logo" loading="lazy"></div>
+    <div>
+      <p class="projectMeta">Founder, computer science</p>
+      <h2>Binary</h2>
+      <p>Founded the school's computer science club independently. The club runs <a href="https://hafs.wiki" target="_blank" rel="noopener">HAFSwiki</a>, the school wiki.</p>
+      <ul class="tags"><li>Founder</li><li>Computer science</li><li>HAFSwiki</li></ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="projectMedia logoMedia" style="background:#222535"><img src="assets/clubs/skywatchers.png" alt="Skywatchers logo" loading="lazy"></div>
+    <div>
+      <p class="projectMeta">Vice captain, astronomy</p>
+      <h2>Skywatchers</h2>
+      <p>Vice captain of the school's astronomical observation club.</p>
+      <ul class="tags"><li>Vice captain</li><li>Astronomy</li></ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="projectMedia logoMedia" style="background:#133163"><img src="assets/clubs/watson.png" alt="WATSON logo" loading="lazy"></div>
+    <div>
+      <p class="projectMeta">Member, aerospace</p>
+      <h2>WATSON</h2>
+      <p>Member of the HAFS aerospace club.</p>
+      <ul class="tags"><li>Aerospace</li></ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="projectMedia">Logo: Biom</div>
+    <div>
+      <p class="projectMeta">Member, biomedical science</p>
+      <h2>Biom</h2>
+      <p>Member of the school's biomedical science club.</p>
+      <ul class="tags"><li>Biomedical science</li></ul>
+    </div>
+  </article>
 </main>
 
 <script src="scripts/main.js"></script>
