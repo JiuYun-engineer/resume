@@ -374,3 +374,10 @@ body::before, body::after{ transition: opacity .7s ease; }
 .projectMedia.page{background:#e5e7eb}
 .projectMedia.page > img{object-fit:cover;object-position:top}
 a.projectMedia{display:block;width:100%;align-self:start}
+/* ===== Clubs ===== */
+.clubSection{max-width:1100px;margin:0 auto;padding:24px 24px 96px}
+.clubGrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.club{border:1px solid rgba(148,163,184,.22);border-radius:16px;background:rgba(2,6,23,.45);padding:20px 22px}
+.clubField{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.club h3{margin:0 0 6px;font-size:22px;font-weight:600}
+.clubRole{margin:0;color:var(--muted);font-size:15px}
