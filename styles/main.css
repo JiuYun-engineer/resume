@@ -366,3 +366,11 @@ body::before, body::after{ transition: opacity .7s ease; }
 .projectLink{margin:14px 0 0;font-size:15px}
 .projectLink a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
 .projectLink a:hover{opacity:.8}
+.paperInfo{border:1px solid rgba(148,163,184,.25);border-radius:10px;padding:14px 16px;margin:0 0 14px;font-size:14.5px}
+.paperInfo dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.paperInfo dt{color:var(--muted)}
+.paperInfo dd{margin:0;color:#e2e8f0}
+.paperInfo b{font-weight:600;color:#fff}
+.projectMedia.page{background:#e5e7eb}
+.projectMedia.page > img{object-fit:cover;object-position:top}
+a.projectMedia{display:block;width:100%;align-self:start}
