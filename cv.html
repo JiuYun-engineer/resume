@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2" />
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#0b1220" />
-  <link rel="stylesheet" href="styles/main.css?v=17" />
+  <link rel="stylesheet" href="styles/main.css?v=18" />
   <script>
     try{ if(!sessionStorage.getItem('bpIntro')){ document.documentElement.classList.add('bp-intro'); sessionStorage.setItem('bpIntro','1'); } }catch(e){}
     setTimeout(function(){ document.documentElement.classList.add('bp-done'); }, 4500);
@@ -37,11 +37,17 @@
   <div class="pageHeadInner">
     <p class="sectionTitle">CV</p>
     <h1>Curriculum vitae</h1>
-    <p>Education, honors, and skills.</p>
+    <p>Full resume, honors, publications, and skills.</p>
   </div>
 </section>
 
 <main class="cvWrap">
+  <div class="cvActions">
+    <a class="cvDownload" href="assets/Jiu_Yun_Resume.pdf" download="Jiu_Yun_Resume.pdf">Download resume (PDF)</a>
+    <a class="cvDownload ghost" href="assets/Jiu_Yun_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+  </div>
+  <div class="cvViewer"><iframe src="assets/Jiu_Yun_Resume.pdf#view=FitH" title="Jiu Yun resume"></iframe></div>
+
   <section class="cvBlock">
     <p class="sectionTitle">Education</p>
       <div class="cvRow"><div class="cvDate">2024 to 2027</div><div><div class="cvTitle">Hankuk Academy of Foreign Studies</div><div class="cvSub">Yongin, Korea. Intended major: mechanical and aerospace engineering</div></div></div>
@@ -49,27 +55,33 @@
 
   <section class="cvBlock">
     <p class="sectionTitle">Honors</p>
-      <div class="cvRow"><div class="cvDate">Sep 2026</div><div><div class="cvTitle">Excellence Award, CanSat Competition Korea</div><div class="cvSub">DDalgi-Jam</div></div></div>
-      <div class="cvRow"><div class="cvDate">2026</div><div><div class="cvTitle">Honorable mention, KSEF</div><div class="cvSub">Drought priming in basil</div></div></div>
-      <div class="cvRow"><div class="cvDate">Jan 2026</div><div><div class="cvTitle">FTC Qualcomm scholarship team</div><div class="cvSub">FTC Team Machina</div></div></div>
-      <div class="cvRow"><div class="cvDate">TBD</div><div><div class="cvTitle">Top 10, CanSat competition</div><div class="cvSub">SOLSAT</div></div></div>
-      <div class="cvRow"><div class="cvDate">TBD</div><div><div class="cvTitle">4th place, IRC</div><div class="cvSub">Combat robotics</div></div></div>
-      <div class="cvRow"><div class="cvDate">TBD</div><div><div class="cvTitle">AWE Hangzhou</div><div class="cvSub">Combat robotics</div></div></div>
+      <div class="cvRow"><div class="cvDate">2026</div><div><div class="cvTitle">KOREA CanSat Competition, Excellence Prize</div><div class="cvSub">2nd Prize; KAIST President’s Award</div></div></div>
+      <div class="cvRow"><div class="cvDate">2025</div><div><div class="cvTitle">AEW Hangzhou</div><div class="cvSub">Invited international competitor, combat robotics</div></div></div>
+      <div class="cvRow"><div class="cvDate">2026</div><div><div class="cvTitle">KSEF Honorable Mention</div><div class="cvSub">Basil drought-priming research</div></div></div>
+      <div class="cvRow"><div class="cvDate">2026</div><div><div class="cvTitle">FTC–Qualcomm Scholarship Team</div><div class="cvSub">Selected by Qualcomm; $350 team grant</div></div></div>
+      <div class="cvRow"><div class="cvDate">2024 to 2025</div><div><div class="cvTitle">KFFF Flag Football, High School Division</div><div class="cvSub">2nd Place ×2; 3rd Place ×2</div></div></div>
+      <div class="cvRow"><div class="cvDate">2024</div><div><div class="cvTitle">HAFS Academic Contest, Philosophy Essay</div><div class="cvSub">Silver Prize</div></div></div>
+      <div class="cvRow"><div class="cvDate">2025</div><div><div class="cvTitle">HAFS Academic Contest, Spanish</div><div class="cvSub">Bronze Prize</div></div></div>
+      <div class="cvRow"><div class="cvDate">2025</div><div><div class="cvTitle">The 1st HAFS Debate Open</div><div class="cvSub">Valuable Team</div></div></div>
+      <div class="cvRow"><div class="cvDate">2025</div><div><div class="cvTitle">Academic Excellence Award</div><div class="cvSub">Sports and Health, 1st Semester (HAFS)</div></div></div>
+      <div class="cvRow"><div class="cvDate">2024, 2025</div><div><div class="cvTitle">Global Leader Monitor</div><div class="cvSub">Elected, Grade 1 Class 1 and Grade 2 Class 1 (HAFS)</div></div></div>
+  </section>
+
+  <section class="cvBlock">
+    <p class="sectionTitle">Publications</p>
+      <div class="cvRow"><div class="cvDate">2024</div><div><div class="cvTitle">SOLSAT: Applying a Reaction Wheel to a CanSat for Sun-Position Tracking and Implementing PID Control</div><div class="cvSub">KSAS 2024 Fall Conference, pp. 568–570</div></div></div>
+      <div class="cvRow"><div class="cvDate">2026</div><div><div class="cvTitle">CanSat-relayed Anti-jamming Communications: Design and Flight Demonstration of Multi-channel 2.4 GHz–433 MHz Link for Frequency Diversity</div><div class="cvSub">KSAS 2026 Fall Conference</div></div></div>
   </section>
 
   <section class="cvBlock">
     <p class="sectionTitle">Skills</p>
-      <div class="cvRow"><div class="cvDate">CAD and fab</div><div><div class="cvTitle">Fusion 360, FDM 3D printing, hand fabrication</div><div class="cvSub"></div></div></div>
-      <div class="cvRow"><div class="cvDate">Electronics</div><div><div class="cvTitle">ESP32, Raspberry Pi, brushless drive systems</div><div class="cvSub"></div></div></div>
-      <div class="cvRow"><div class="cvDate">Code</div><div><div class="cvTitle">C, Python, Java</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">CAD and simulation</div><div><div class="cvTitle">Fusion 360, SolidWorks, Inventor; ANSYS Explicit Dynamics, SpaceClaim, Fluent</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">Manufacturing</div><div><div class="cvTitle">FDM 3D printing (8 years), soldering, machining</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">Electronics</div><div><div class="cvTitle">BLDC motors and ESCs (AM32, BLHeli_32), circuit design and repair, LoRa telemetry</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">Programming</div><div><div class="cvTitle">Python, C, Java, JavaScript, HTML/CSS, Unity</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">Infrastructure</div><div><div class="cvTitle">Linux self-hosting (Raspberry Pi, Docker, SSH, Cloudflare Tunnel), Git</div><div class="cvSub"></div></div></div>
+      <div class="cvRow"><div class="cvDate">Languages</div><div><div class="cvTitle">Korean (native), English (fluent)</div><div class="cvSub"></div></div></div>
   </section>
-
-  <section class="cvBlock">
-    <p class="sectionTitle">Athletics</p>
-      <div class="cvRow"><div class="cvDate">2024 to 2025</div><div><div class="cvTitle">Flag football</div><div class="cvSub">KFFF high school division: 2nd and 3rd place finishes in 2024 and 2025</div></div></div>
-  </section>
-
-  <a class="cvDownload" href="assets/cv.pdf">Download CV (PDF)</a>
 </main>
 
 <script src="scripts/main.js"></script>
