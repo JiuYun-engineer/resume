@@ -77,6 +77,15 @@
 </main>
 
 <script src="scripts/main.js"></script>
+<script>
+  window.goatcounter={no_onload:true};
+  window.addEventListener('load',function(){
+    var ua=navigator.userAgent||'';
+    if(navigator.webdriver||/HeadlessChrome|facebookexternalhit|facebookcatalog|meta-externalagent|meta-externalfetcher|Facebot|bot|crawler|spider|preview/i.test(ua))return;
+    var t=setInterval(function(){if(window.goatcounter&&window.goatcounter.count){clearInterval(t);window.goatcounter.count();}},100);
+    setTimeout(function(){clearInterval(t)},10000);
+  });
+</script>
 <script data-goatcounter="https://lukeyun.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
